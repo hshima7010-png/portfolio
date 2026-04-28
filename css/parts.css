@@ -1,0 +1,311 @@
+@charset "utf-8";
+
+/* =============================================
+   ローディング
+============================================= */
+#loading {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: #ffffff;
+  z-index: 9999999;
+  text-align: center;
+}
+
+#loading-logo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: 'Teko', sans-serif;
+  font-size: 1rem;
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  color: #000;
+}
+
+.loadingbg { display: none; }
+
+body.appear .loadingbg {
+  display: block;
+  animation-name: PageAnime;
+  animation-duration: 1.2s;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+  content: "";
+  position: fixed;
+  z-index: 999;
+  width: 50%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  background-color: #000000;
+}
+
+@keyframes PageAnime {
+  0%   { transform-origin: left; transform: translateX(-300%) skewX(0deg); }
+  100% { transform-origin: left; transform: translateX(500%) skewX(90deg); }
+}
+
+#container {
+  position: relative;
+  opacity: 0;
+  z-index: 1;
+}
+
+body.appear #container {
+  animation-name: PageAnimeAppear;
+  animation-duration: 1s;
+  animation-delay: 0.6s;
+  animation-fill-mode: forwards;
+  opacity: 0;
+}
+
+@keyframes PageAnimeAppear {
+  0%   { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+/* =============================================
+   ナビゲーション
+============================================= */
+#g-nav.panelactive {
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+}
+
+.circle-bg {
+  position: fixed;
+  z-index: 3;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  transform: scale(0);
+  top: calc(50% - 50px);
+  left: calc(50% - 50px);
+  transition: all 0.6s;
+}
+
+.circle-bg.circleactive { transform: scale(50); }
+
+#g-nav-list {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  width: 100%;
+  height: 100vh;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+#g-nav.panelactive #g-nav-list { display: block; }
+
+#g-nav ul {
+  opacity: 0;
+  position: absolute;
+  z-index: 999;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#g-nav.panelactive ul { opacity: 1; }
+
+#g-nav.panelactive ul li {
+  animation-name: gnaviAnime;
+  animation-duration: 1s;
+  animation-delay: 0.2s;
+  animation-fill-mode: forwards;
+  opacity: 0;
+}
+
+@keyframes gnaviAnime {
+  0%   { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+#g-nav li { text-align: center; list-style: none; }
+
+#g-nav li a {
+  color: #000;
+  text-decoration: none;
+  padding: 10px;
+  display: block;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  font-family: 'Teko', sans-serif;
+  font-size: 1.7rem;
+  font-weight: 400;
+}
+
+#g-nav li a:hover { color: #ff8800; }
+
+@media screen and (max-width: 768px) {
+  #g-nav li a { padding: 5px 10px; font-size: 1.2rem; }
+}
+
+/* =============================================
+   ハンバーガーボタン
+============================================= */
+.openbtn {
+  position: fixed;
+  top: 2.5vh;
+  right: 2vw;
+  z-index: 9999;
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+}
+
+.openbtn .openbtn-area {
+  transition: all 1.8s;
+  width: 50px;
+  height: 50px;
+}
+
+.openbtn span {
+  display: inline-block;
+  transition: all 0.4s;
+  position: absolute;
+  left: 14px;
+  height: 2px;
+  border-radius: 0;
+  background: #000000;
+  width: 45%;
+}
+
+.openbtn span:nth-of-type(1) { top: 15px; }
+.openbtn span:nth-of-type(2) { top: 23px; }
+.openbtn span:nth-of-type(3) { top: 31px; }
+
+.openbtn.active .openbtn-area { transform: rotate(360deg); }
+
+.openbtn.active span:nth-of-type(1) {
+  top: 18px;
+  left: 18px;
+  transform: translateY(6px) rotate(-45deg);
+  width: 30%;
+}
+
+.openbtn.active span:nth-of-type(2) { opacity: 0; }
+
+.openbtn.active span:nth-of-type(3) {
+  top: 30px;
+  left: 18px;
+  transform: translateY(-6px) rotate(45deg);
+  width: 30%;
+}
+
+/* =============================================
+   ボタン（btn02）— Hero のオレンジライン風に統一
+============================================= */
+.btn02 {
+  position: relative;
+  display: inline-block;
+  margin: 4vh 0 0 0;
+  width: 100%;
+  max-width: 240px;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  outline: none;
+  flex-shrink: 0;
+}
+
+.btn02 span {
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border: 2px solid #000000;
+  transform-style: preserve-3d;
+  transition: 0.5s;
+  font-family: 'Teko', sans-serif;
+  font-size: 1rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.rotatefront span:nth-child(1) {
+  color: #000;
+  transform: rotateX(0deg);
+  transform-origin: 0 50% -25px;
+}
+
+.rotatefront:hover span:nth-child(1) {
+  transform: rotateX(-90deg);
+}
+
+.rotatefront span:nth-child(2) {
+  background: #ff8800;
+  color: #fff;
+  border-color: #ff8800;
+  transform: rotateX(90deg);
+  transform-origin: 0 50% -25px;
+}
+
+.rotatefront:hover span:nth-child(2) {
+  transform: rotateX(0deg);
+}
+
+@media screen and (max-width: 768px) {
+  .btn02 { margin: 2vh 0 0 0; }
+}
+
+/* =============================================
+   スクロールアニメーション共通
+============================================= */
+.glide {
+  animation-name: glideAnime;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  transform-origin: left;
+  opacity: 0;
+}
+
+@keyframes glideAnime {
+  from { transform: translate3d(0, 100%, 0) skewY(12deg); opacity: 0; }
+  to   { transform: translate3d(0, 0, 0) skewY(0); opacity: 1; }
+}
+
+.glideTrigger { opacity: 0; }
+
+span.glideText { overflow: hidden; display: block; }
+
+span.glideTextTrigger {
+  transition: 0.8s ease-in-out;
+  transform: translate3d(0, 100%, 0) skewY(12deg);
+  transform-origin: left;
+  display: block;
+}
+
+span.glideTextTrigger.glideTextAppear {
+  transform: translate3d(0, 0, 0) skewY(0);
+}
+
+/* =============================================
+   .fixed sticky 設定
+============================================= */
+.fixed {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+}
+
+#Productions.fixed {
+  position: relative !important;
+  height: auto !important;
+  min-height: 0 !important;
+  overflow: visible !important;
+}
+
+@media screen and (max-width: 768px) {
+  .fixed { position: relative !important; }
+}
+
+/* =============================================
+   スクロール進捗バー（parts.css には不要、style.cssに追記済）
+============================================= */

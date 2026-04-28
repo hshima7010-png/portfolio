@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="210mm"
+   height="297mm"
+   viewBox="0 0 210 297"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.3.2 (091e20e, 2023-11-25, custom)"
+   sodipodi:docname="描画.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     inkscape:zoom="0.72782688"
+     inkscape:cx="333.8706"
+     inkscape:cy="559.88589"
+     inkscape:window-width="1920"
+     inkscape:window-height="1094"
+     inkscape:window-x="-11"
+     inkscape:window-y="-11"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs1">
+    <rect
+       x="67.323702"
+       y="254.18132"
+       width="615.53099"
+       height="376.46315"
+       id="rect3" />
+    <rect
+       x="9.6176717"
+       y="329.74874"
+       width="770.78769"
+       height="311.88735"
+       id="rect2" />
+    <rect
+       x="19.235343"
+       y="300.89573"
+       width="739.18677"
+       height="267.92086"
+       id="rect1" />
+  </defs>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <text
+       xml:space="preserve"
+       transform="scale(0.26458333)"
+       id="text1"
+       style="fill:#000000;white-space:pre;shape-inside:url(#rect1)" />
+    <text
+       xml:space="preserve"
+       transform="scale(0.26458333)"
+       id="text2"
+       style="font-size:192px;line-height:12.4;white-space:pre;shape-inside:url(#rect2);fill:#000000"><tspan
+         x="9.6171875"
+         y="1887.2041"
+         id="tspan5"><tspan
+           dx="0 36.984375 30.351562 40.453125"
+           style="font-size:48px"
+           id="tspan1">DEMO</tspan></tspan></text>
+    <text
+       xml:space="preserve"
+       transform="scale(0.26458333)"
+       id="text3"
+       style="font-size:42.66666721px;line-height:12.4;white-space:pre;shape-inside:url(#rect3);fill:#000000"><tspan
+         x="67.324219"
+         y="907.43749"
+         id="tspan7"><tspan
+           dx="0 32.875023 26.979187 35.958359"
+           id="tspan6">DEMO</tspan></tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:94.3384px;line-height:16.6;font-family:HGGothicE;-inkscape-font-specification:HGGothicE;fill:#ff6600;stroke-width:1.47404;fill-opacity:1"
+       x="-2.5176694"
+       y="214.83659"
+       id="text4"
+       transform="scale(1.1516404,0.86832662)"><tspan
+         sodipodi:role="line"
+         id="tspan4"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:94.3384px;line-height:16.6;font-family:HGGothicE;-inkscape-font-specification:HGGothicE;fill:#ff6600;stroke-width:1.47404;fill-opacity:1"
+         x="-2.5176694"
+         y="214.83659">DEMO</tspan></text>
+  </g>
+</svg>

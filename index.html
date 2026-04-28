@@ -1,0 +1,286 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>portfolio</title>
+<link rel="shortcut icon" href="images/favicon.ico">
+<meta name="robots" content="noindex,nofollow">
+<meta name="keywords" content="">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<!--GoogleFont-->
+<link href="https://fonts.googleapis.com/css?family=Sawarabi+Gothic%7CTeko&display=swap" rel="stylesheet">
+<!--CSS-->
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<link rel="stylesheet" type="text/css" href="css/parts.css">
+</head>
+
+<body>
+  <div id="progress-bar"></div>
+  <div class="cursor"><div class="cursor-text"></div></div>
+
+  <div id="loading">
+    <div id="loading-logo">
+      <div class="loader"></div><br>Loading
+    </div>
+  </div>
+  <div class="loadingbg"></div>
+
+  <div id="container">
+
+    <header id="header">
+      <h1><a href="#hero"><span class="glideText"><span class="glideTextTrigger">SH</span></span></a></h1>
+    </header>
+
+    <div class="openbtn glideTrigger">
+      <div class="openbtn-area"><span></span><span></span><span></span></div>
+    </div>
+
+    <!-- ダークモード切替 -->
+    <button id="dark-toggle" aria-label="ダークモード切替">
+      <span class="dark-icon dark-icon-sun"></span>
+      <span class="dark-icon dark-icon-moon"></span>
+    </button>
+
+    <nav id="g-nav">
+      <div id="g-nav-list">
+        <ul>
+          <li><a href="#hero">Top</a></li>
+          <li><a href="#Productions">Productions</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+    <div class="circle-bg"></div>
+
+    <main id="main-area">
+
+      <!-- ========== Hero ========== -->
+      <section id="hero">
+        <div class="hero-content">
+          <p class="hero-label">Web Developer</p>
+
+          <h2 class="hero-name">
+            <span class="hero-name-line"><span>SHIMA</span></span>
+            <span class="hero-name-line"><span>PORTFOLIO</span></span>
+          </h2>
+
+          <p class="hero-desc">
+            HTML / CSS / JavaScript / Vue3 / PHP / Python<br>
+            フロントエンドを中心に、<br>
+            ユーザー体験にこだわったWebサービスを制作しています。
+          </p>
+
+          <div class="hero-scroll">
+            <span class="hero-scroll-line"></span>
+            Scroll
+          </div>
+        </div>
+
+        <div class="hero-deco-right">Based in Fukuoka, Japan</div>
+
+        <div class="hero-counter">
+          Works<strong>07</strong>
+        </div>
+      </section>
+
+      <!-- ========== Productions ========== -->
+      <section id="Productions" class="fixed">
+        <div class="inner">
+
+          <p class="section-label">Works</p>
+          <h2><span class="glideText"><span class="glideTextTrigger">Productions</span></span></h2>
+
+          <!-- フィルターボタン -->
+          <div class="filter-buttons">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="js">JavaScript</button>
+            <button class="filter-btn" data-filter="vue">Vue</button>
+            <button class="filter-btn" data-filter="php">PHP</button>
+            <button class="filter-btn" data-filter="map">Map</button>
+          </div>
+
+          <div class="Productions-area">
+            <section class="work-card" data-tags="html css js"
+              data-modal-title="ATELIER"
+              data-modal-tags="HTML / CSS / JavaScript"
+              data-modal-img="images/demo-ec.png"
+              data-modal-desc="3つの架空ブランド(NOVA / OBSIDIAN / VERDANT)を扱うキュレーションECのデモサイト。8pxグリッド・CSS変数駆動のデザインシステムを基盤に、ブランドごとに異なる世界観(ブルータリスト / ギャラリー / レトロ)を構築。IntersectionObserverによるスクロール連動アニメーション、商品カードのリッチホバー、XSS対策、アクセシビリティ対応(Skip Link / prefers-reduced-motion / aria-label)まで作り込んでいます。"
+              data-modal-url="https://hshima7010-png.github.io/ATELIER/">
+              <div class="Productions-img">
+                <img src="images/demo-ec.png" alt="ATELIER トップページ">
+              </div>
+              <div class="work-tags"><span>HTML</span><span>CSS</span><span>JS</span></div>
+              <h3>ATELIER</h3>
+              <p>3ブランドを束ねるキュレーションECのデモ。デザインシステムを設計し、ブランドごとに異なる世界観を実装しました。</p>
+              <div class="card-open-hint">クリックで詳細を見る</div>
+            </section>
+
+            <section class="work-card" data-tags="js map"
+              data-modal-title="RAMEN-MAP"
+              data-modal-tags="JS / Google Maps API"
+              data-modal-img="images/ramen-map.jpeg"
+              data-modal-desc="Google Maps Platform を活用した福岡市のラーメン店検索マップ。ジャンル（ラーメン・つけ麺・まぜそば）ごとのフィルタリング、現在地表示、お気に入り登録（localStorage）を実装。店舗データを JSON で一元管理し、動的マーカー生成・情報ウィンドウのカスタマイズまで自作しました。"
+              data-modal-url="https://hshima7010-png.github.io/ramen-map/">
+              <div class="Productions-img">
+                <img src="images/ramen-map.jpeg" alt="RAMEN-MAP">
+              </div>
+              <div class="work-tags"><span>JS</span><span>Map</span></div>
+              <h3>RAMEN-MAP</h3>
+              <p>福岡市のラーメン店を地図で探せるWebアプリ。ジャンル絞り込み・お気に入り保存機能つき。</p>
+              <div class="card-open-hint">クリックで詳細を見る</div>
+            </section>
+
+            <section class="work-card" data-tags="vue js api spa"
+              data-modal-title="Qiita Finder"
+              data-modal-tags="Vue 3 / JavaScript / Axios / REST API / localStorage / Responsive CSS"
+              data-modal-img="images/qiita.png"
+              data-modal-desc="Qiita APIを活用した記事検索SPA。キーワード検索・3種ソート(新着/関連/いいね)に加え、検索履歴の保存、ダークモード対応、ページネーション、キーボードショートカットを実装し、エンジニアが日常的に使える情報収集ツールを目指しました。Vue 3のリアクティブシステムを活かしつつ、localStorageでのユーザー状態永続化やdebounceによるAPIリクエスト最適化など、実運用を意識した設計にこだわっています。"
+              data-modal-url="https://hshima7010-png.github.io/Qiita-Finder/">
+              <div class="Productions-img">
+                <img src="images/qiita.jpeg" alt="Qiita Finder">
+              </div>
+              <div class="work-tags"><span>Vue</span><span>JS</span></div>
+              <h3>QIITA FINDER</h3>
+              <p>Qiitaの記事を検索・ソートできるWebアプリです。</p>
+              <div class="card-open-hint">クリックで詳細を見る</div>
+            </section>
+
+            <section class="work-card" data-tags="python ml"
+              data-modal-title="H&amp;M Recommender EC"
+              data-modal-tags="Python / pandas / scikit-learn / Flask / JavaScript"
+              data-modal-img="images/HM.jpeg"
+              data-modal-desc="KaggleのH&amp;M Personalized Fashion Recommendationsデータセット（約3,000万件のトランザクション、10万人超の顧客データ）を活用したレコメンド特化型ECサイト。pandasで顧客・商品・購買履歴のEDAを行い、3種類のレコメンドエンジンを実装。①新規ユーザー向け人気商品（時間減衰重み + カテゴリ多様化）、②あなたへのおすすめ（Item-Item協調フィルタリング・scipy疎行列 + コサイン類似度）、③関連商品（コンテンツベース・属性加重One-Hot）。性別セグメント（LADIES/MEN/KIDS）ごとに独立してレコメンドを学習・配信し、Flask APIで提供。フロントはバニラJSで構築。"
+              data-modal-url="https://github.com/Shima0710/hm-recommender">
+              <div class="Productions-img">
+                <img src="images/HM.jpeg" alt="H&amp;M Recommender EC">
+              </div>
+              <div class="work-tags"><span>Python</span><span>pandas</span><span>scikit-learn</span><span>Flask</span></div>
+              <h3>H&amp;M Recommender EC</h3>
+              <p>機械学習による3種類のレコメンドエンジンを搭載したファッションECサイト。</p>
+              <div class="card-open-hint">クリックで詳細を見る</div>
+            </section>
+          </div>
+
+          <div class="portfolio-button">
+            <a href="portfolio.html" class="btn02 rotatefront">
+              <span>All Works</span><span>Go to Productions</span>
+            </a>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ========== About ========== -->
+      <section id="about">
+        <div class="inner">
+
+          <p class="section-label">Profile</p>
+          <h2><span class="glideText"><span class="glideTextTrigger">About</span></span></h2>
+
+          <div class="about-layout">
+
+            <!-- プロフィール情報 -->
+            <ul class="about-list">
+              <li>
+                <dl>
+                  <dt>Name</dt>
+                  <dd>嶋 邦裕 / 2001年7月10日</dd>
+                </dl>
+              </li>
+              <li>
+                <dl>
+                  <dt>Frontend</dt>
+                  <dd>HTML / CSS / JavaScript / TypeScript / Vue3 / jQuery</dd>
+                </dl>
+              </li>
+              <li>
+                <dl>
+                  <dt>Backend</dt>
+                  <dd>PHP / Python / C# / Pandas</dd>
+                </dl>
+              </li>
+              <li>
+                <dl>
+                  <dt>Database</dt>
+                  <dd>SQL Server / MySQL</dd>
+                </dl>
+              </li>
+            </ul>
+
+            <!-- スキルグラフ -->
+            <div class="skill-chart-wrap">
+              <p class="skill-chart-label">Skill Level</p>
+              <canvas id="skillChart"></canvas>
+            </div>
+
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ========== Contact ========== -->
+      <section id="contact">
+        <div class="inner">
+
+          <p class="section-label">Get in touch</p>
+          <h2><span class="glideText"><span class="glideTextTrigger">Contact</span></span></h2>
+
+          <p class="tel">
+            <a href="tel:080-1752-0381">
+              <span class="glideText"><span class="glideTextTrigger">080-1752-0381</span></span>
+            </a>
+          </p>
+          <p class="mail">
+            <a href="mailto:h.shima7010@gmail.com">
+              <span class="glideText"><span class="glideTextTrigger">h.shima7010@gmail.com</span></span>
+            </a>
+          </p>
+
+          <ul class="sns-link glideTrigger">
+            <li>
+              <a href="https://github.com/Shima0710">
+                <img src="images/github.png" alt="github" style="height: 3rem; width: auto;">
+              </a>
+            </li>
+          </ul>
+
+        </div>
+      </section>
+
+    </main>
+
+    <!-- ========== 作品詳細モーダル ========== -->
+    <div id="work-modal" class="modal-overlay" aria-hidden="true">
+      <div class="modal-box">
+        <button class="modal-close" id="modal-close" aria-label="閉じる">
+          <span></span><span></span>
+        </button>
+        <div class="modal-inner">
+          <div class="modal-img-wrap">
+            <img id="modal-img" src="" alt="">
+          </div>
+          <div class="modal-body">
+            <p class="modal-tags" id="modal-tags"></p>
+            <h3 class="modal-title" id="modal-title"></h3>
+            <p class="modal-desc" id="modal-desc"></p>
+            <a class="btn02 rotatefront modal-link" id="modal-link" href="" target="_blank" rel="noopener">
+              <span>Go to page</span><span>Open site</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!--Chart.js-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <!--GSAP-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.2/gsap.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.2/ScrollTrigger.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <!--JS-->
+  <script src="js/script.js"></script>
+
+</body>
+</html>

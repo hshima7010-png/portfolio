@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>Productions | portfolio</title>
+<meta name="robots" content="noindex,nofollow">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<!--GoogleFont-->
+<link href="https://fonts.googleapis.com/css?family=Sawarabi+Gothic%7CTeko&display=swap" rel="stylesheet">
+<!--CSS-->
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<link rel="stylesheet" type="text/css" href="css/parts.css">
+
+<style>
+/* =============================================
+   portfolio.html 固有スタイル
+============================================= */
+
+/* カードグリッド */
+#Productions {
+  padding: 14vh 7vw 10vh;
+  width: 100%;
+}
+
+#Productions .inner { width: 100%; }
+
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 32px;
+  width: 100%;
+  margin-top: 4vh;
+}
+
+/* カード */
+.p-card {
+  background: rgba(255,255,255,0.15);
+  border: 1px solid rgba(255,255,255,0.3);
+  border-radius: 12px;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+  cursor: default;
+}
+
+.p-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 32px rgba(0,0,0,0.12);
+  background: rgba(255,255,255,0.25);
+}
+
+/* カード番号 */
+.p-card-num {
+  font-family: 'Teko', sans-serif;
+  font-size: 3.5rem;
+  font-weight: 400;
+  line-height: 1;
+  color: #ff8800;
+  letter-spacing: -0.02em;
+}
+
+/* カードタイトル */
+.p-card-title {
+  font-family: 'Teko', sans-serif;
+  font-size: 1.8rem;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  line-height: 1;
+  color: #000;
+  text-transform: uppercase;
+}
+
+/* タグ */
+.p-card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.p-card-tags span {
+  font-family: 'Teko', sans-serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  padding: 2px 10px;
+  border: 1px solid rgba(0,0,0,0.2);
+  color: rgba(0,0,0,0.45);
+  line-height: 1.6;
+}
+
+/* 画像 */
+.p-card-img {
+  width: 100%;
+  border-radius: 8px;
+  overflow: hidden;
+  background: rgba(0,0,0,0.05);
+}
+
+.p-card-img img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.p-card:hover .p-card-img img {
+  transform: scale(1.03);
+}
+
+/* 説明文 */
+.p-card-desc {
+  font-size: 0.88rem;
+  line-height: 1.85;
+  color: #444;
+  flex: 1;
+}
+
+/* リンクボタン */
+.p-card-link {
+  font-family: 'Teko', sans-serif;
+  font-size: 0.9rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #000;
+  border: 1.5px solid #000;
+  padding: 8px 20px;
+  display: inline-block;
+  align-self: flex-start;
+  transition: background 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+  cursor: none;
+}
+
+.p-card-link:hover {
+  background: #ff8800;
+  border-color: #ff8800;
+  color: #fff;
+}
+
+.p-card-link.disabled {
+  opacity: 0.3;
+  pointer-events: none;
+}
+
+/* Homeボタン */
+.home-btn-wrap {
+  margin-top: 6vh;
+  display: flex;
+  justify-content: flex-start;
+}
+
+/* ダークモード */
+body.dark .p-card {
+  background: rgba(255,255,255,0.06);
+  border-color: rgba(255,255,255,0.12);
+}
+
+body.dark .p-card:hover {
+  background: rgba(255,255,255,0.1);
+}
+
+body.dark .p-card-title { color: #f0f0f0; }
+body.dark .p-card-desc  { color: #aaa; }
+body.dark .p-card-tags span {
+  border-color: rgba(255,255,255,0.2);
+  color: rgba(255,255,255,0.4);
+}
+
+body.dark .p-card-link {
+  color: #f0f0f0;
+  border-color: rgba(255,255,255,0.4);
+}
+
+body.dark .p-card-img { background: rgba(255,255,255,0.05); }
+
+@media screen and (max-width: 768px) {
+  #Productions { padding: 12vh 6vw 8vh; }
+  .portfolio-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+}
+
+@media screen and (max-width: 540px) {
+  #Productions { padding: 12vh 40px 8vh; }
+}
+
+/* カードクリックヒント */
+.p-card {
+  cursor: none;
+  position: relative;
+}
+
+.p-card-hint {
+  font-family: 'Teko', sans-serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(0,0,0,0.25);
+  transition: color 0.2s;
+  margin-bottom: -8px;
+}
+
+.p-card:hover .p-card-hint { color: #ff8800; }
+
+body.dark .p-card-hint { color: rgba(255,255,255,0.2); }
+body.dark .p-card:hover .p-card-hint { color: #ff8800; }
+</style>
+</head>
+
+<body>
+  <div id="progress-bar"></div>
+  <div class="cursor"><div class="cursor-text"></div></div>
+
+  <div id="loading">
+    <div id="loading-logo">
+      <div class="loader"></div><br>Loading
+    </div>
+  </div>
+  <div class="loadingbg"></div>
+
+  <div id="container">
+
+    <header id="header">
+      <h1><a href="index.html"><span class="glideText"><span class="glideTextTrigger">SH</span></span></a></h1>
+    </header>
+
+    <div class="openbtn glideTrigger">
+      <div class="openbtn-area"><span></span><span></span><span></span></div>
+    </div>
+
+    <!-- ダークモード切替 -->
+    <button id="dark-toggle" aria-label="ダークモード切替">
+      <span class="dark-icon dark-icon-sun"></span>
+      <span class="dark-icon dark-icon-moon"></span>
+    </button>
+
+    <nav id="g-nav">
+      <div id="g-nav-list">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="index.html#Productions">Works</a></li>
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+    <div class="circle-bg"></div>
+
+    <main id="main-area">
+
+      <section id="Productions">
+        <div class="inner">
+
+          <p class="section-label">All Works</p>
+          <h2><span class="glideText"><span class="glideTextTrigger">Productions</span></span></h2>
+
+          <div class="portfolio-grid">
+
+            <!-- 01 Qiita Finder -->
+            <div class="p-card"
+              data-modal-title="QIITA FINDER"
+              data-modal-tags="HTML / CSS / JavaScript / Vue3"
+              data-modal-img="images/qiita.png"
+              data-modal-desc="Qiita APIを使って記事を検索・表示するWebアプリ。キーワードを入力すると関連記事を取得し、新着順・関連順・いいね順の3種類でソートして表示します。"
+              data-modal-url="https://shima0710.github.io/Qiita-Finder/">
+              <div class="p-card-num">01</div>
+              <div class="p-card-hint">クリックで詳細を見る</div>
+              <div class="p-card-img">
+                <img src="images/qiita.png" alt="Qiita Finder">
+              </div>
+              <h3 class="p-card-title">Qiita Finder</h3>
+              <div class="p-card-tags">
+                <span>HTML</span><span>CSS</span><span>JavaScript</span><span>Vue3</span>
+              </div>
+              <p class="p-card-desc">Qiita APIを使って記事を検索・表示するWebアプリ。新着順・関連順・いいね順の3種類でソートして結果を表示します。</p>
+              <a href="https://shima0710.github.io/Qiita-Finder/" class="p-card-link" target="_blank" rel="noopener">More Detail</a>
+            </div>
+
+            <!-- 02 POST -->
+            <div class="p-card"
+              data-modal-title="POST"
+              data-modal-tags="Vue3 / TypeScript / Vite"
+              data-modal-img="images/post.png"
+              data-modal-desc="ViteとVue3・TypeScriptで作成した投稿アプリ。投稿作成・コメント追加・いいね・削除・ダークモード切替を実装しています。"
+              data-modal-url="https://github.com/Shima0710/post">
+              <div class="p-card-num">02</div>
+              <div class="p-card-hint">クリックで詳細を見る</div>
+              <div class="p-card-img">
+                <img src="images/post.png" alt="POST">
+              </div>
+              <h3 class="p-card-title">POST</h3>
+              <div class="p-card-tags">
+                <span>Vue3</span><span>TypeScript</span><span>Vite</span>
+              </div>
+              <p class="p-card-desc">ViteとVue3・TypeScriptで作成した投稿アプリ。投稿作成・コメント追加・いいね・削除・ダークモード切替を実装しています。</p>
+              <a href="https://github.com/Shima0710/post" class="p-card-link" target="_blank" rel="noopener">GitHub</a>
+            </div>
+
+            <!-- 03 APPAREL_EC -->
+            <div class="p-card"
+              data-modal-title="APPAREL_EC"
+              data-modal-tags="HTML / CSS / JavaScript / jQuery"
+              data-modal-img="images/demo-ec.png"
+              data-modal-desc="商品表示・ブランドスライダー・購入画面・カート・いいね保存など、ECサイトの一通りの機能を実装。関連商品はコンテンツベースフィルタリングで表示。"
+              data-modal-url="https://shima0710.github.io/EC/index.html">
+              <div class="p-card-num">03</div>
+              <div class="p-card-hint">クリックで詳細を見る</div>
+              <div class="p-card-img">
+                <img src="images/demo-ec.png" alt="APPAREL_EC">
+              </div>
+              <h3 class="p-card-title">APPAREL_EC</h3>
+              <div class="p-card-tags">
+                <span>HTML</span><span>CSS</span><span>JavaScript</span><span>jQuery</span>
+              </div>
+              <p class="p-card-desc">商品表示・ブランドスライダー・購入画面・カート・いいね保存など、ECサイトの一通りの機能を実装。関連商品はコンテンツベースフィルタリングで表示。</p>
+              <a href="https://shima0710.github.io/EC/index.html" class="p-card-link" target="_blank" rel="noopener">More Detail</a>
+            </div>
+
+            <!-- 04 ChatVault -->
+            <div class="p-card"
+              data-modal-title="CHATVAULT"
+              data-modal-tags="PHP / jQuery / MySQL"
+              data-modal-img="images/album.png"
+              data-modal-desc="サークル・クラブ向けコミュニティサイト。お知らせ・アカウント管理・写真アップロード・アルバム・掲示板トークを実装しています。"
+              data-modal-url="https://github.com/Shima0710/ChatVault">
+              <div class="p-card-num">04</div>
+              <div class="p-card-hint">クリックで詳細を見る</div>
+              <div class="p-card-img">
+                <img src="images/album.png" alt="ChatVault">
+              </div>
+              <h3 class="p-card-title">ChatVault</h3>
+              <div class="p-card-tags">
+                <span>PHP</span><span>jQuery</span><span>MySQL</span>
+              </div>
+              <p class="p-card-desc">サークル・クラブ向けコミュニティサイト。お知らせ・アカウント管理・写真アップロード・アルバム・掲示板トークを実装しています。</p>
+              <a href="https://github.com/Shima0710/ChatVault" class="p-card-link" target="_blank" rel="noopener">GitHub</a>
+            </div>
+
+            <!-- 05 parallax -->
+            <div class="p-card"
+              data-modal-title="PARALLAX"
+              data-modal-tags="HTML / CSS / JavaScript"
+              data-modal-img="images/parallax.png"
+              data-modal-desc="パララックスデザインを意識して制作したポートフォリオサイト。スクロールだけで奥行きのある体験を表現しています。"
+              data-modal-url="https://shima0710.github.io/parallax/">
+              <div class="p-card-num">05</div>
+              <div class="p-card-hint">クリックで詳細を見る</div>
+              <div class="p-card-img">
+                <img src="images/parallax.png" alt="parallax">
+              </div>
+              <h3 class="p-card-title">Parallax</h3>
+              <div class="p-card-tags">
+                <span>HTML</span><span>CSS</span><span>JavaScript</span>
+              </div>
+              <p class="p-card-desc">パララックスデザインを意識して制作したポートフォリオサイト。スクロールだけで奥行きのある体験を表現しています。</p>
+              <a href="https://shima0710.github.io/parallax/" class="p-card-link" target="_blank" rel="noopener">More Detail</a>
+            </div>
+
+            <!-- 06 RAMEN-MAP -->
+            <div class="p-card"
+              data-modal-title="RAMEN-MAP"
+              data-modal-tags="JavaScript / Google Maps API"
+              data-modal-img="images/ramen-map.png"
+              data-modal-desc="福岡市のラーメン屋をGoogle Maps上にジャンル別に色分け表示。現在地から周辺店舗を検索する機能も実装しています。"
+              data-modal-url="https://shima0710.github.io/fukuoka-ramen-map/map.html">
+              <div class="p-card-num">06</div>
+              <div class="p-card-hint">クリックで詳細を見る</div>
+              <div class="p-card-img">
+                <img src="images/ramen-map.png" alt="RAMEN-MAP">
+              </div>
+              <h3 class="p-card-title">RAMEN-MAP</h3>
+              <div class="p-card-tags">
+                <span>JavaScript</span><span>Google Maps API</span>
+              </div>
+              <p class="p-card-desc">福岡市のラーメン屋をGoogle Maps上にジャンル別に色分け表示。現在地から周辺店舗を検索する機能も実装しています。</p>
+              <a href="https://shima0710.github.io/fukuoka-ramen-map/map.html" class="p-card-link" target="_blank" rel="noopener">More Detail</a>
+            </div>
+
+            <!-- 07 bulletin board -->
+            <div class="p-card"
+              data-modal-title="BULLETIN BOARD"
+              data-modal-tags="C# / ASP.NET / SQL Server"
+              data-modal-img="images/bb.png"
+              data-modal-desc="アカウント作成・ログイン・会員情報変更・退会・メッセージ投稿・返信・編集・削除など、掲示板の主要機能をフルスクラッチで実装。"
+              data-modal-url="">
+              <div class="p-card-num">07</div>
+              <div class="p-card-hint">クリックで詳細を見る</div>
+              <div class="p-card-img">
+                <img src="images/bb.png" alt="bulletin board">
+              </div>
+              <h3 class="p-card-title">Bulletin Board</h3>
+              <div class="p-card-tags">
+                <span>C#</span><span>ASP.NET</span><span>SQL Server</span>
+              </div>
+              <p class="p-card-desc">アカウント作成・ログイン・会員情報変更・退会・メッセージ投稿・返信・編集・削除など、掲示板の主要機能をフルスクラッチで実装。</p>
+              <span class="p-card-link disabled">Coming Soon</span>
+            </div>
+
+          </div>
+
+          <div class="home-btn-wrap">
+            <a href="index.html" class="btn02 rotatefront">
+              <span>Home</span><span>Back to Home</span>
+            </a>
+          </div>
+
+        </div>
+      </section>
+
+    </main>
+
+    <!-- ========== 作品詳細モーダル ========== -->
+    <div id="work-modal" class="modal-overlay" aria-hidden="true">
+      <div class="modal-box">
+        <button class="modal-close" id="modal-close" aria-label="閉じる">
+          <span></span><span></span>
+        </button>
+        <div class="modal-inner">
+          <div class="modal-img-wrap">
+            <img id="modal-img" src="" alt="">
+          </div>
+          <div class="modal-body">
+            <p class="modal-tags" id="modal-tags"></p>
+            <h3 class="modal-title" id="modal-title"></h3>
+            <p class="modal-desc" id="modal-desc"></p>
+            <a class="btn02 rotatefront modal-link" id="modal-link" href="" target="_blank" rel="noopener">
+              <span>Go to page</span><span>Open site</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!--GSAP-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.2/gsap.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.2/ScrollTrigger.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <!--JS-->
+  <script src="js/script.js"></script>
+  <script>
+  // ========== portfolio.html 作品詳細モーダル ==========
+  (function () {
+    const overlay  = document.getElementById('work-modal');
+    const closeBtn = document.getElementById('modal-close');
+    if (!overlay) return;
+
+    const modalImg   = document.getElementById('modal-img');
+    const modalTags  = document.getElementById('modal-tags');
+    const modalTitle = document.getElementById('modal-title');
+    const modalDesc  = document.getElementById('modal-desc');
+    const modalLink  = document.getElementById('modal-link');
+
+    function openModal(card) {
+      const url = card.dataset.modalUrl;
+      modalImg.src           = card.dataset.modalImg   || '';
+      modalImg.alt           = card.dataset.modalTitle || '';
+      modalTags.textContent  = card.dataset.modalTags  || '';
+      modalTitle.textContent = card.dataset.modalTitle || '';
+      modalDesc.textContent  = card.dataset.modalDesc  || '';
+
+      if (url) {
+        modalLink.href = url;
+        modalLink.style.display = '';
+      } else {
+        modalLink.style.display = 'none';
+      }
+
+      overlay.classList.add('is-open');
+      overlay.setAttribute('aria-hidden', 'false');
+      document.body.classList.add('modal-open');
+    }
+
+    function closeModal() {
+      overlay.classList.remove('is-open');
+      overlay.setAttribute('aria-hidden', 'true');
+      document.body.classList.remove('modal-open');
+    }
+
+    document.querySelectorAll('.p-card').forEach(function (card) {
+      card.addEventListener('click', function (e) {
+        if (e.target.closest('a, button')) return;
+        openModal(card);
+      });
+    });
+
+    closeBtn.addEventListener('click', closeModal);
+    overlay.addEventListener('click', function (e) {
+      if (e.target === overlay) closeModal();
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') closeModal();
+    });
+  })();
+  </script>
+
+</body>
+</html>
