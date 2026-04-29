@@ -1,4 +1,4 @@
-﻿@charset "utf-8";
+@charset "utf-8";
 
 /* =============================================
    基本リセット・ベーススタイル
@@ -1247,4 +1247,266 @@ body.dark {
 
 body.dark::-webkit-scrollbar-track {
   background: #111;
+}
+
+/* =============================================
+   レスポンシブ完全対応
+   PC: 1024px以上（デフォルト）
+   タブレット: 768px〜1023px
+   スマホ: 〜767px
+============================================= */
+
+/* ========== タブレット（768px〜1023px） ========== */
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+
+  /* Hero */
+  #hero {
+    padding: 0 6vw;
+    align-items: center;
+  }
+
+  .hero-content { padding-top: 8vh; }
+
+  .hero-name {
+    font-size: clamp(4rem, 10vw, 7rem);
+  }
+
+  .hero-desc { font-size: 0.95rem; }
+
+  .hero-counter { left: 6vw; }
+  .hero-deco-right { right: 6vw; }
+
+  /* header */
+  #header h1 { font-size: 2rem; }
+
+  /* ダークトグル */
+  #dark-toggle { right: calc(4vw + 55px); }
+
+  /* ハンバーガー */
+  .openbtn { right: 4vw; }
+
+  /* Productions */
+  #Productions { padding: 10vh 6vw 8vh; }
+
+  #Productions .Productions-area {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+
+  /* フィルター */
+  .filter-buttons { gap: 8px; flex-wrap: wrap; }
+  .filter-btn { font-size: 0.85rem; padding: 5px 14px; }
+
+  /* About */
+  #about { padding: 10vh 6vw 6vh; }
+
+  .about-layout {
+    grid-template-columns: 1fr 1fr;
+    gap: 3vw;
+  }
+
+  #about .about-list dt { width: 120px; font-size: 0.9rem; }
+
+  /* Contact */
+  #contact { padding: 10vh 6vw 10vh; }
+
+  #contact .tel,
+  #contact .mail { font-size: clamp(1.5rem, 3.5vw, 2.5rem); }
+
+  /* モーダル */
+  .modal-inner { grid-template-columns: 1fr 1fr; }
+  .modal-body { padding: 36px 28px; }
+}
+
+/* ========== スマホ（〜767px） ========== */
+@media screen and (max-width: 767px) {
+
+  /* Hero */
+  #hero {
+    padding: 0 5vw 20vh;
+    align-items: flex-end;
+    min-height: 100svh;
+  }
+
+  .hero-content { padding-top: 0; }
+
+  .hero-name { font-size: clamp(3.2rem, 16vw, 5rem); }
+
+  .hero-label {
+    font-size: 0.8rem;
+    letter-spacing: 0.25em;
+    margin-bottom: 1rem;
+  }
+
+  .hero-desc {
+    font-size: 0.82rem;
+    line-height: 1.9;
+    margin-bottom: 2rem;
+    max-width: 100%;
+  }
+
+  .hero-deco-right { display: none; }
+
+  .hero-counter {
+    bottom: 3vh;
+    left: 5vw;
+  }
+
+  .hero-scroll { font-size: 0.75rem; }
+
+  /* header */
+  #header h1 {
+    font-size: 1.6rem;
+    top: 1.5vh;
+    left: 5vw;
+  }
+
+  /* ハンバーガー */
+  .openbtn { right: 4vw; top: 1.5vh; }
+
+  /* ダークトグル */
+  #dark-toggle {
+    right: calc(4vw + 52px);
+    top: 1.5vh;
+    width: 34px;
+    height: 34px;
+  }
+
+  /* ナビ */
+  #g-nav li a { font-size: 1.3rem; padding: 8px 10px; }
+
+  /* Productions */
+  #Productions {
+    padding: 10vh 5vw 8vh;
+  }
+
+  #Productions h2 { font-size: clamp(2.2rem, 10vw, 3.5rem); }
+
+  #Productions .Productions-area {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  #Productions h3 { font-size: 1.5rem; }
+
+  #Productions p { font-size: 0.85rem; }
+
+  /* フィルター */
+  .filter-buttons {
+    gap: 6px;
+    margin-bottom: 2vh;
+  }
+
+  .filter-btn {
+    font-size: 0.75rem;
+    padding: 4px 10px;
+    height: auto;
+    letter-spacing: 0.1em;
+  }
+
+  /* work-tags */
+  .work-tags span { font-size: 0.7rem; padding: 2px 8px; }
+
+  /* portfolio-button */
+  .portfolio-button { margin-top: 3vh; }
+
+  /* About */
+  #about { padding: 10vh 5vw 6vh; }
+
+  #about h2 { font-size: clamp(2.2rem, 10vw, 3.5rem); }
+
+  .about-layout {
+    grid-template-columns: 1fr;
+    gap: 5vh;
+  }
+
+  .skill-chart-wrap { order: -1; }
+
+  #about .about-list dl { flex-direction: column; gap: 0.2rem; }
+
+  #about .about-list dt {
+    width: 100%;
+    font-size: 0.85rem;
+  }
+
+  #about .about-list dd { font-size: 0.85rem; }
+
+  #about .about-list li {
+    margin: 0 0 14px 0;
+    padding: 0 0 14px 0;
+  }
+
+  /* section-label */
+  .section-label {
+    font-size: 0.75rem;
+    letter-spacing: 0.3em;
+  }
+
+  /* Contact */
+  #contact { padding: 10vh 5vw 10vh; }
+
+  #contact h2 { font-size: clamp(2.2rem, 10vw, 3.5rem); }
+
+  #contact .tel,
+  #contact .mail { font-size: clamp(1.2rem, 5vw, 1.8rem); }
+
+  /* btn02 */
+  .btn02 {
+    max-width: 200px;
+    height: 44px;
+    line-height: 44px;
+    font-size: 0.85rem;
+  }
+
+  /* モーダル */
+  .modal-overlay { padding: 0; align-items: flex-end; }
+
+  .modal-box {
+    max-height: 92vh;
+    border-radius: 16px 16px 0 0;
+  }
+
+  .modal-inner { grid-template-columns: 1fr; }
+
+  .modal-img-wrap { height: 200px; }
+
+  .modal-body { padding: 24px 20px 32px; }
+
+  .modal-title { font-size: 1.8rem; }
+
+  .modal-desc { font-size: 0.85rem; }
+
+  .modal-tags { font-size: 0.75rem; }
+
+  .modal-close { top: 14px; right: 14px; }
+
+  /* スキルチャート */
+  #skillChart { max-width: 300px; }
+
+  /* スクロール進捗バー */
+  #progress-bar { height: 2px; }
+}
+
+/* ========== 小さいスマホ（〜375px） ========== */
+@media screen and (max-width: 375px) {
+
+  #hero { padding: 0 6vw 18vh; }
+
+  .hero-name { font-size: clamp(2.8rem, 15vw, 4rem); }
+
+  .filter-btn { font-size: 0.7rem; padding: 3px 8px; }
+
+  #contact .tel,
+  #contact .mail { font-size: 1.1rem; }
+}
+
+/* =============================================
+   タッチデバイスはカーソル非表示
+============================================= */
+@media (hover: none), (pointer: coarse) {
+  .cursor { display: none !important; }
+  body, a, button, .openbtn, .openbtn-area,
+  .work-card, .p-card, .filter-btn, .p-card-link {
+    cursor: auto !important;
+  }
 }
