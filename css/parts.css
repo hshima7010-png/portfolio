@@ -309,3 +309,60 @@ span.glideTextTrigger.glideTextAppear {
 /* =============================================
    スクロール進捗バー（parts.css には不要、style.cssに追記済）
 ============================================= */
+
+/* =============================================
+   レスポンシブ（parts.css）
+============================================= */
+
+/* タブレット */
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .openbtn { right: 4vw; }
+
+  #g-nav li a {
+    font-size: 1.4rem;
+    padding: 8px 10px;
+  }
+
+  .btn02 {
+    max-width: 220px;
+    height: 48px;
+    line-height: 48px;
+  }
+}
+
+/* スマホ */
+@media screen and (max-width: 767px) {
+
+  /* ローディング */
+  #loading-logo { font-size: 0.85rem; letter-spacing: 0.2em; }
+
+  /* ナビ */
+  #g-nav li a { font-size: 1.2rem; }
+
+  /* ハンバーガー */
+  .openbtn {
+    width: 40px;
+    height: 40px;
+  }
+
+  .openbtn span { left: 10px; width: 50%; }
+  .openbtn span:nth-of-type(1) { top: 12px; }
+  .openbtn span:nth-of-type(2) { top: 19px; }
+  .openbtn span:nth-of-type(3) { top: 26px; }
+
+  .openbtn.active span:nth-of-type(1) {
+    top: 15px; left: 12px;
+  }
+  .openbtn.active span:nth-of-type(3) {
+    top: 26px; left: 12px;
+  }
+
+  /* btn02 */
+  .btn02 span {
+    font-size: 0.85rem;
+    letter-spacing: 0.15em;
+  }
+
+  /* loadingbg */
+  body.appear .loadingbg { width: 100%; }
+}
