@@ -189,6 +189,41 @@ body.dark .p-card-img { background: rgba(255,255,255,0.05); }
   #Productions { padding: 12vh 40px 8vh; }
 }
 
+/* タブレット */
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  #Productions { padding: 10vh 6vw 8vh; }
+
+  .portfolio-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+
+  .p-card { padding: 24px; }
+  .p-card-num { font-size: 2.8rem; }
+  .p-card-title { font-size: 1.5rem; }
+  .p-card-img img { height: 170px; }
+}
+
+/* スマホ */
+@media screen and (max-width: 767px) {
+  #Productions { padding: 10vh 5vw 8vh; }
+
+  .portfolio-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .p-card { padding: 20px; gap: 12px; }
+  .p-card-num { font-size: 2.4rem; }
+  .p-card-title { font-size: 1.4rem; }
+  .p-card-img img { height: 180px; }
+  .p-card-desc { font-size: 0.85rem; }
+
+  .p-card-tags span { font-size: 0.7rem; }
+
+  .home-btn-wrap { margin-top: 4vh; }
+}
+
 /* カードクリックヒント */
 .p-card {
   cursor: none;
